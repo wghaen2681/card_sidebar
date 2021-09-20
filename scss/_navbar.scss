@@ -1,0 +1,81 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  color: red !important;
+
+  label.toggle {
+    position: absolute;
+    filter: invert(100%);
+
+    span {
+      display: none;
+      color: black;
+    }
+  }
+
+  label:hover {
+    cursor: pointer;
+  }
+
+  // 不顯示純功能性的 checkbox 按鈕
+  input {
+    display: none;
+  }
+
+  // 當控制側邊欄的 checkbox 被勾選時，將側邊欄的 margin-right 設為 0，如此側邊欄即可顯示於畫面中。
+  input:checked ~ .sidebar {
+    margin-right: 0%;
+  }
+
+  .sidebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    margin-right: -100%; // 當控制側邊欄的 checkbox 未被勾選時，將側邊欄的 margin-right 設為 -100%，如此側邊欄即可隱藏於畫面之外。
+    background: #21b2a6;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    transition: 1s;
+
+    // 側邊欄中關閉側邊欄的圖像
+    .close {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      filter: invert(100%);
+    }
+
+    .menu {
+      padding: 2.5rem 1.5rem 0 1.5rem;
+
+      a {
+        display: block;
+        padding: 1rem 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+      }
+
+      li + li {
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+      }
+    }
+  }
+  @include lg {
+    label.toggle {
+      span {
+        display: inline-block;
+        vertical-align: bottom;
+      }
+    }
+  }
+}

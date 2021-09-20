@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 連結外部字體 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;500;700&display=swap">
+    <!-- 連結 css 檔案 -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>sidebar</title>
+</head>
+<body>
+    <!-- Navbar + Sidebar -->
+    <div id="navbar">
+        <!-- for="togle_sidebar 與決定 sidebar 開關的 checkbox 連結" -->
+        <label class="toggle" for="toggle_sidebar">
+            <!-- menu 字樣 -->
+            <span>MENU</span>
+            <!-- 關閉圖樣 -->
+            <img src="./icons/list.svg" width="25">
+        </label>
+
+        <!-- 決定 sidebar 開關的 checkbox -->
+        <input id="toggle_sidebar" type="checkbox">
+
+        <!-- 側邊欄 -->
+        <div class="sidebar">
+            <!-- 關閉側邊欄按鈕 -->
+            <div class="close">
+                <!-- for="toggle_sidebar 與決定 sidebar 開關的 checkbox 連結 -->
+                <label for="toggle_sidebar"><img src="./icons/x.svg" width="40"></label>
+            </div>
+            <!-- 選項清單 -->
+            <ul class="menu">
+                <li><a href="#section01">section01</a></li>
+                <li><a href="#section02">section02</a></li>
+                <li><a href="#section03">section03</a></li>
+                <li><a href="#section04">section04</a></li>
+                <li><a href="#footer">footer</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
